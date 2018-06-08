@@ -12,7 +12,7 @@ class RandomWalk():
         self.x_values = [0]
 
     def fill_walk(self):
-        """Wygenerowanie wszystkich punktów dla błądzenia losowe."""
+        """Wygenerowanie wszystkich punktów dla błądzenia losowego."""
 
         # Wykonywanie kroków aż do chwili osiągnięcia oczekiwanej liczby punktów.
         while len(self.x_values) < self.num_points:
