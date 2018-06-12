@@ -17,5 +17,6 @@ plt.tick_params(axis='both', which='major', labelsize=14)
 # Zdefiniowanie zakresu dla każdej osi.
 plt.axis([0, 1100, 0, 1100000])
 
+# Zaprezentowanie wykresu oraz zapisanie go jako plik .png
 plt.savefig('scatter_plot.png', bbox_inches='tight')
 plt.show()
