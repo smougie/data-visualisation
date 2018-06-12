@@ -11,22 +11,22 @@ class RandomWalk():
         self.y_values = [0]
         self.x_values = [0]
 
+    def get_step(self):
+        """Funkcja odpowiedzialna za wygenerowanie losowej wartości kroku"""
+        value_direction = choice([1, -1])
+        value_distance = choice([0, 1, 2, 3, 4])
+        return value_direction * value_distance
+
     def fill_walk(self):
         """Wygenerowanie wszystkich punktów dla błądzenia losowego."""
 
         # Wykonywanie kroków aż do chwili osiągnięcia oczekiwanej liczby punktów.
         while len(self.x_values) < self.num_points:
-            # Ustalenie kierunku oraz odległości do pokonania w tym kierunku.
-            x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4])
-            x_step = x_direction * x_distance
-
-            y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4])
-            y_step = y_direction * y_distance
+            # Ustalenie kierunku oraz odległości do pokonania w tym kierunku przy pomocy funkcji get_step()
+            x_step = self.get_step()
+            y_step = self.get_step()
 
             # Odrzucenie ruchów, które prowadzą donikąd.
-
             if x_step == 0 and y_step == 0:
                 continue
 

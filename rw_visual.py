@@ -10,7 +10,7 @@ while True:
     rw.fill_walk()
 
     # Określenie wielkości okna wykresu.
-    plt.figure(figsize=(20, 12))
+    plt.figure(dpi=256)
 
     # Zmienna w której przechowuje listę punktów, które przekażemy do mapowania kolorów.
     point_numbers = list(range(rw.num_points))
