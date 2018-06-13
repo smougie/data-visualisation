@@ -7,18 +7,13 @@ dice_1 = Dice()
 dice_2 = Dice()
 
 # Wykonanie określonej liczby rzutów i umieszczenie wyników na liście.
-results = []
-for roll_value in range(100000):
-    result = dice_1.roll() + dice_2.roll()
-    results.append(result)
+results = [(dice_1.roll() + dice_2.roll()) for roll_value in range(100000)]
 
 # Analiza wyników.
-frequencies = []  # Pusta lista utworzona do przechowywania częstotliwości wystąpień wartości.
+# List comprehension odpowiada za iterację poprzez wszystkie możliwe wartości kości, następnie dana wartość znajdująca
+# się obecnie w zmiennej value zostaje użyta w metodzie count w celu sprawdzenie ile razy występuje w liście rezultatów.
 max_result = dice_1.num_sides + dice_2.num_sides
-for value in range(2, max_result+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
-
+frequencies = [results.count(value) for value in range(2, max_result+1)]
 
 # Wizualizacja wyników.
 hist = pygal.Bar()  # Wygenerowanie wykresu tworząc egzemplarz klasy Bar.

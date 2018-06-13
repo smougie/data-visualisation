@@ -8,7 +8,6 @@ dice = Dice()
 # Wykonanie określonej liczby rzutów i umieszczenie wyników na liście.
 results = [dice.roll() for roll_value in range(1000)]
 
-
 # Analiza wyników.
 # List comprehension odpowiada za iterację poprzez wszystkie możliwe wartości kości, następnie dana wartość znajdująca
 # się obecnie w zmiennej value zostaje użyta w metodzie count w celu sprawdzenie ile razy występuje w liście rezultatów.
