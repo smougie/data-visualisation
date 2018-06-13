@@ -25,7 +25,7 @@ hist = pygal.Bar()  # Wygenerowanie wykresu tworząc egzemplarz klasy Bar.
 hist.force_uri_protocol = 'http'
 
 hist.title = 'Wynik rzutu dwiema kośćmi D6 tysiąc razy.'
-hist.x_labels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']  # Etykiety osi x
+hist.x_labels = list(range(2, max_result+1))  # Etykiety osi x
 hist.x_title = 'Wynik'  # Tytuł osi x
 hist.y_title = 'Częstotliwość występowania wartości'  # Tytuł osi y
 

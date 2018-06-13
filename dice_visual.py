@@ -6,23 +6,20 @@ from dice import Dice
 dice = Dice()
 
 # Wykonanie określonej liczby rzutów i umieszczenie wyników na liście.
-results = []
-for roll_value in range(1000):
-    result = dice.roll()
-    results.append(result)
+results = [dice.roll() for roll_value in range(1000)]
+
 
 # Analiza wyników.
-frequencies = []  # Pusta lista utworzona do przechowywania częstotliwości wystąpień wartości.
-for value in range(1, dice.num_sides+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+# List comprehension odpowiada za iterację poprzez wszystkie możliwe wartości kości, następnie dana wartość znajdująca
+# się obecnie w zmiennej value zostaje użyta w metodzie count w celu sprawdzenie ile razy występuje w liście rezultatów.
+frequencies = [results.count(value) for value in range(1, dice.num_sides+1)]
 
 # Wizualizacja wyników.
 hist = pygal.Bar()  # Wygenerowanie wykresu tworząc egzemplarz klasy Bar.
 hist.force_uri_protocol = 'http'
 
 hist.title = 'Wynik rzucania pojedyńczą kościa D6 tysiąc razy.'
-hist.x_labels = ['1', '2', '3', '4', '5', '6']  # Etykiety osi x
+hist.x_labels = list(range(1, dice.num_sides+1))  # Etykiety osi x
 hist.x_title = 'Wynik'  # Tytuł osi x
 hist.y_title = 'Częstotliwość występowania wartości'  # Tytuł osi y
 
