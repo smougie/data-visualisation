@@ -19,7 +19,7 @@ frequencies = [results.count(value) for value in range(2, max_result+1)]
 hist = pygal.Bar()  # Wygenerowanie wykresu tworząc egzemplarz klasy Bar.
 hist.force_uri_protocol = 'http'
 
-hist.title = 'Wynik rzutu dwiema kośćmi D6 tysiąc razy.'
+hist.title = 'Wynik rzutu dwiema kośćmi D6 sto tysięcy razy.'
 hist.x_labels = list(range(2, max_result+1))  # Etykiety osi x
 hist.x_title = 'Wynik'  # Tytuł osi x
 hist.y_title = 'Częstotliwość występowania wartości'  # Tytuł osi y
